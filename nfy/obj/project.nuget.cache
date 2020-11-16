@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "faaUQ0/6NVuc9pGH2jbrci8TUJ8r3uAxgA55N6PFWl5bJeLlcIvqLiyb34eZThHHX5qwGcJqennx7HkJTmDEJw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Slimane\\Desktop\\dev\\json\\nfy\\nfy.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Slimane\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\Slimane\\.nuget\\packages\\legivel\\0.4.5\\legivel.0.4.5.nupkg.sha512"
+  ],
+  "logs": []
+}

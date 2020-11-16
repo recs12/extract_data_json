@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VBiBp+vhSIoTSCE5ktrJwILZ6qpVceew8wmooHYjbk/pKAOzS9bJ0BMPP8V/lpOn8T1tUHQSmWG52lxn7ufmHg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Slimane\\Desktop\\dev\\json\\nfj\\nfj.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Slimane\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\Slimane\\.nuget\\packages\\fsharp.json\\0.4.0\\fsharp.json.0.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
