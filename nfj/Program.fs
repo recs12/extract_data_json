@@ -1,5 +1,4 @@
 ﻿open FSharp.Json
-open System
 
 let Inputfilename = @"C:\Users\recs\Documents\PT_Documents\scripts\extract_data_json\nfj\table.json"
 let json = System.IO.File.ReadAllText(Inputfilename)
@@ -25,9 +24,14 @@ let matching x =
         | None -> None
 
 let getTable (collectionsPart: ItemCollection) (jdeNum:string)=
-    collectionsPart |> List.tryFind (fun t -> t.ContainsKey(jdeNum) )
+    collectionsPart
+    |> List.tryFind (fun t -> t.ContainsKey(jdeNum))
 
-let item = getTable deserialized "105990"
-printfn "%A" item
+let setKeyValue = getTable deserialized "105990"
+let chart = setKeyValue.Value.Item("105990")
+let equivalent = chart.``metric ss-304``
 
+printfn "%s" equivalent
+
+// implement if key not found.
 
