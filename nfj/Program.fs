@@ -1,29 +1,33 @@
 ﻿open FSharp.Json
+open System
 
-type Table = Map<string, string>
+let Inputfilename = @"C:\Users\recs\Documents\PT_Documents\scripts\extract_data_json\nfj\table.json"
+let json = System.IO.File.ReadAllText(Inputfilename)
+
+type Table = {
+   ``imperial zinc``: string
+   ``metric zinc``: string
+   ``imperial ss-304``: string
+   ``metric ss-304``: string
+   ``imperial ss-316``: string
+   ``metric ss-316``: string
+}
 
 type ConversionChart = Map<string, Table>
 
 type ItemCollection = ConversionChart list
 
-let Inputfilename = @"C:\Users\Slimane\Desktop\dev\json\nfj\table.json"
-let json = System.IO.File.ReadAllText(Inputfilename)
 let deserialized = Json.deserialize<ItemCollection> json
 
-type EquivalentJde =  Option<string>
-
-let checkIt x =
+let matching x =
     match x with
-        | Some item -> printfn "%s" item
-        | None -> printfn "the value is None"
+        | Some table -> table
+        | None -> None
 
-let searchDetails (collectionsPart: ItemCollection) (jdeNum: string) =
-    collectionsPart
-        |> List.tryFind (fun (k,v) -> v when k = jdeNum)
-        |> checkIt
+let getTable (collectionsPart: ItemCollection) (jdeNum:string)=
+    collectionsPart |> List.tryFind (fun t -> t.ContainsKey(jdeNum) )
 
-// let item = searchDetails deserialized "55110020"
+let item = getTable deserialized "105990"
+printfn "%A" item
 
-// printfn "%s" item
-// printfn "%A" deserialized
 

@@ -133,23 +133,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Slimane\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\recs\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Slimane\\Desktop\\dev\\json\\nfj\\nfj.fsproj",
+      "projectUniqueName": "C:\\Users\\recs\\Documents\\PT_Documents\\scripts\\extract_data_json\\nfj\\nfj.fsproj",
       "projectName": "nfj",
-      "projectPath": "c:\\Users\\Slimane\\Desktop\\dev\\json\\nfj\\nfj.fsproj",
-      "packagesPath": "C:\\Users\\Slimane\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Slimane\\Desktop\\dev\\json\\nfj\\obj\\",
+      "projectPath": "C:\\Users\\recs\\Documents\\PT_Documents\\scripts\\extract_data_json\\nfj\\nfj.fsproj",
+      "packagesPath": "C:\\Users\\recs\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\recs\\Documents\\PT_Documents\\scripts\\extract_data_json\\nfj\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Slimane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\recs\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -194,7 +190,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
