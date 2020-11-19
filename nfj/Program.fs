@@ -28,12 +28,10 @@ let getTable (collectionsChart: ConversionChartList) (jdeNum:string)=
 
 let tableConversion = getTable deserializedTableData "0105990"
 
-// printfn "bool: %A" (fst tableConversion)
-
-let status = (fst tableConversion)
+let tableStatus = (fst tableConversion)
 
 let partnumber =
-    if status then
+    if tableStatus then
         let chart =  snd tableConversion
         let equivalent:string = chart.``metric ss-304``
         equivalent
