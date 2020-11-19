@@ -26,10 +26,17 @@ let matching setOfData =
 let getTable (collectionsChart: ConversionChartList) (jdeNum:string)=
     collectionsChart.TryGetValue jdeNum
 
-let tableConversion = getTable deserializedTableData "00105990"
+let tableConversion = getTable deserializedTableData "0105990"
 
-let chart =  (snd tableConversion)
+// printfn "bool: %A" (fst tableConversion)
 
-let equivalent:string = chart.``metric ss-304``
+let status = (fst tableConversion)
 
-printfn "%A" equivalent
+let partnumber =
+    if status then
+        let chart =  snd tableConversion
+        let equivalent:string = chart.``metric ss-304``
+        equivalent
+    else ""
+
+printfn "%s" partnumber
