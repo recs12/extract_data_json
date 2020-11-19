@@ -1,8 +1,5 @@
 ﻿open FSharp.Json
 
-let Inputfilename = @"C:\Users\recs\Documents\PT_Documents\scripts\extract_data_json\nfj\table.json"
-let json = System.IO.File.ReadAllText(Inputfilename)
-
 type Table = {
    ``imperial zinc``: string
    ``metric zinc``: string
@@ -12,26 +9,27 @@ type Table = {
    ``metric ss-316``: string
 }
 
-type ConversionChart = Map<string, Table>
+let Inputfilename =
+    @"J:\PTCR\Users\RECS\Macros\ReplacerFasteners\dataFastenersJson\table.json"
 
-type ItemCollection = ConversionChart list
+let json = System.IO.File.ReadAllText(Inputfilename)
 
-let deserialized = Json.deserialize<ItemCollection> json
+type ConversionChartList = Map<string, Table>
 
-let matching x =
-    match x with
+let deserializedTableData = Json.deserialize<ConversionChartList> json
+
+let matching setOfData =
+    match setOfData with
         | Some table -> table
         | None -> None
 
-let getTable (collectionsPart: ItemCollection) (jdeNum:string)=
-    collectionsPart
-    |> List.tryFind (fun t -> t.ContainsKey(jdeNum))
+let getTable (collectionsChart: ConversionChartList) (jdeNum:string)=
+    collectionsChart.TryGetValue jdeNum
 
-let setKeyValue = getTable deserialized "105990"
-let chart = setKeyValue.Value.Item("105990")
-let equivalent = chart.``metric ss-304``
+let tableConversion = getTable deserializedTableData "00105990"
 
-printfn "%s" equivalent
+let chart =  (snd tableConversion)
 
-// implement if key not found.
+let equivalent:string = chart.``metric ss-304``
 
+printfn "%A" equivalent
