@@ -1,13 +1,6 @@
 ﻿open FSharp.Json
 
-type Table = {
-   ``imperial zinc``: string
-   ``metric zinc``: string
-   ``imperial ss-304``: string
-   ``metric ss-304``: string
-   ``imperial ss-316``: string
-   ``metric ss-316``: string
-}
+type Table = Map<string,string>
 
 let Inputfilename =
     @"J:\PTCR\Users\RECS\Macros\ReplacerFasteners\dataFastenersJson\table.json"
@@ -26,14 +19,16 @@ let matching setOfData =
 let getTable (collectionsChart: ConversionChartList) (jdeNum:string)=
     collectionsChart.TryGetValue jdeNum
 
-let tableConversion = getTable deserializedTableData "0105990"
+let tableConversion = getTable deserializedTableData "105990"
 
 let tableStatus = (fst tableConversion)
+
+let material = "imperial zinc"
 
 let partnumber =
     if tableStatus then
         let chart =  snd tableConversion
-        let equivalent:string = chart.``metric ss-304``
+        let equivalent:string = chart.[material]
         equivalent
     else ""
 
